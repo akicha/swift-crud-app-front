@@ -33,9 +33,12 @@ export class UserTableComponent implements OnInit {
     selectedUsers.map(item => this.userService.deleteUser(item.id).subscribe({
       error: (error: { message: any; }) => {
         console.error('There was an error!', error.message);
+      },
+      complete: () => {
+        window.location.reload();
       }
-    }));
-    window.location.reload();
+    }))
+    ;
   }
 
   changeButtonVisibility() {

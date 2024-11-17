@@ -52,8 +52,8 @@ export class NewUserModuleComponent {
     if (this.userForm?.valid) {
       this.userService.createUser(new User(this.userForm.value)).subscribe(user => {
         console.log('Created new user with id ' + user.id);
+        this.goToUsersTable();
       });
-      this.goToUsersTable();
     }
   }
 

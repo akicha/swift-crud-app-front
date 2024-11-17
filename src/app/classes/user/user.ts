@@ -13,5 +13,5 @@ export class User {
   gender: string | undefined;
   comments: string | undefined;
   @jsonIgnore()
-  selected: any;
+  selected: boolean | undefined;
 }

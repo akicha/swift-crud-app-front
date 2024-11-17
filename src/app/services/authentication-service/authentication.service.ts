@@ -24,8 +24,7 @@ export class AuthenticationService {
   }
 
   isLoggedIn() {
-    const token = this.localStorageService.get(AppSettings.TOKEN_KEY);
-    return !token == null;
+    return this.localStorageService.get(AppSettings.TOKEN_KEY) != null;
   }
 
   logout() {
