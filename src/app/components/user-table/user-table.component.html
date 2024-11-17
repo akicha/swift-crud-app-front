@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Select</th>
+    <th scope="col">Name</th>
+    <th scope="col">Age</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Comments</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <ng-template ngFor let-item [ngForOf]="users" let-i="index">
+    <tr>
+      <td>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" [(ngModel)]="item.selected" (change)="changeButtonVisibility() "
+                 class="custom-control-input"
+                 id="customCheck{{i}}">
+          <label class="custom-control-label" for="customCheck{{i}}"></label>
+        </div>
+      </td>
+      <td>{{ item.first_name }} {{ item.last_name }}</td>
+      <td>{{ item.age }}</td>
+      <td>{{ item.gender }}</td>
+      <td>{{ item.comments }}</td>
+    </tr>
+  </ng-template>
+
+  </tbody>
+</table>
+
+<div>
+  <button type="button" [disabled]="disabledDeleteButton" (click)="deleteUsers()"
+          class="btn btn-outline-secondary m-2">Delete
+    selected
+  </button>
+
+  <button type="button" [disabled]="disabledNewUserButton" routerLink="/users/new"
+          class="btn btn-outline-secondary m-2">Add new
+  </button>
+
+</div>

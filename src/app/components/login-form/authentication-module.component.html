@@ -1,0 +1,13 @@
+<h2 class="text-center mt-5">Sing in to your account</h2>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="row mt-5">
+  <div class="form-row pb-3">
+    <input type="email" class="form-control" id="inputEmail" formControlName="username" placeholder="Email address">
+  </div>
+  <div class="form-row pb-3">
+    <input type="password" class="form-control" id="inputPassword" formControlName="password" placeholder="Password">
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-secondary w-100">Log in</button>
+  </div>
+</form>
